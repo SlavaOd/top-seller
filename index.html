@@ -33,8 +33,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 70%;
-            height: 70%;
+            width: 80%;
+            height: 80%;
             background-color: white;
             padding: 20px;
             z-index: 1000;
@@ -104,6 +104,8 @@
 <div>
     <p id="highlightCount">Кількість участників в розіграші PS5: <span id="countValue">0</span></span></p>
 </div>
+
+<div id="totalRowCount">Загальна кількість участників: 0</div>
 
 <table id="peopleTable">
     <!-- Таблица будет заполняться с помощью JavaScript -->
@@ -185,6 +187,13 @@ var highlightedCount = document.querySelectorAll('.highlight').length;
 var countValue = document.getElementById('countValue');
 countValue.textContent = highlightedCount;
 
+document.addEventListener('DOMContentLoaded', function () {
+        // Получаем все строки таблицы
+        var rows = document.querySelectorAll('#peopleTable tbody tr');
+
+        // Отображаем общее количество строк
+        document.getElementById('totalRowCount').textContent = 'Загальна кількість участників: ' + rows.length;
+    });
     </script>
     </body>
     </html>
