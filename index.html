@@ -69,6 +69,22 @@
             font-size: 18px;
             font-weight: bold;
         }
+        .reg1 {
+            width: 30%;
+            height: 30%;
+            display: block;
+            margin: 0 auto;
+        }
+        .reg5 {
+            width: 15%;
+            height: 15%;
+            display: block;
+            margin: 0 auto;
+        }
+        .divpopup {
+            /* border: 2px solid grey; */
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -82,8 +98,11 @@
 
 <!-- Обратный отсчет до конца дня 31.01.2024 -->
 <div id="countdownContainer">
-    <p id="countdownText">Для участі в розіграшу PlayStation 5 залишилось <span id="countdown31"></span></p>
+    <p id="countdownText">Для участі в розіграшу PlayStation 5 залишилось: <span id="countdown31"></span></p>
     <div id="countdown31"></div>
+</div>
+<div>
+    <p id="highlightCount">Кількість участників в розіграші PS5: <span id="countValue">0</span></span></p>
 </div>
 
 <table id="peopleTable">
@@ -94,7 +113,14 @@
 <div id="overlay"></div>
 <div id="popupContainer">
     <div id="closeButton" onclick="closePopup()">X</div>
-    <p>Произвольная информация в вашем попапе.</p>
+    <Div class="divpopup">Реєструй якнайбільше стартових пакетів в JET та гарантовано приймай участь у розіграші колонки JBL (розіграш 1 раз на 2 тижні)
+        <img src="./JBL.png" alt="" srcset="" class="reg1">
+        <h2>!!!Кожна реєстрація це додатковий шанс на виграш!!!</h2>
+    </Div>
+    <div class="divpopup">Зроби від 5 реєстрацій в JET у січні та гарантовано приймай участь у розіграші ГОЛОВНОГО призу місяця ігрової приставки Sony Playstation 5
+        <img src="./ps.png" alt="" srcset="" class="reg5">
+        <h2>!!!Кожні 5 реєстрацій це додатковий шанс на виграш!!!</h2>
+    </div>
 </div>
 
 <button id="infoButton">Умови акції</button>
@@ -110,8 +136,7 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-            document.getElementById(elementId).innerHTML = days + "д " + hours + "ч "
-                + minutes + "м " + seconds + "с ";
+            document.getElementById(elementId).innerHTML = days + "д " + hours + "г";
     
             if (distance < 0) {
                 document.getElementById(elementId).innerHTML = "Время истекло";
@@ -119,7 +144,7 @@
         }
     
         // Обратный отсчет до конца дня 15.01.2024
-        var endDate15 = new Date("January 15, 2024 23:59:59").getTime();
+        var endDate15 = new Date("January 31, 2024 23:59:59").getTime();
         setInterval(function () {
             updateCountdown(endDate15, "countdown15");
         }, 1000);
@@ -152,6 +177,14 @@
             popupContainer.style.display = 'none';
             overlay.style.display = 'none';
         }
+
+       // Подсчет количества строк, выделенных зеленым цветом
+var highlightedCount = document.querySelectorAll('.highlight').length;
+
+// Отображение количества выделенных строк
+var countValue = document.getElementById('countValue');
+countValue.textContent = highlightedCount;
+
     </script>
     </body>
     </html>
