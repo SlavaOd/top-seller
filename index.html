@@ -125,6 +125,26 @@
     </div>
 </div>
 
+
+<!-- Кнопка для открытия попапа -->
+<button id="openPopupButton">По території</button>
+
+<!-- Затемненный фон -->
+<div id="overlay" style="display: none;"></div>
+
+<!-- Попап с таблицей -->
+<div id="territoryPopupContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%; height: 70%; background-color: white; padding: 20px; z-index: 1000; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+    <div id="territoryCloseButton" onclick="closeTerritoryPopup()" style="position: absolute; top: 10px; right: 10px; cursor: pointer;">X</div>
+    <table id="territoryCountTable" border="1">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Територія</th>
+                <th onclick="sortTable(1)">Кількість профів що реєструють</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 <button id="infoButton">Умови акції</button>
 
     <table id="peopleTable"><thead><tr><th>Імя</th><th>Прізвище</th><th>Територія</th><th>Фоп</th><th>Кількість </th></tr></thead><tbody><tr class="highlight"><td>Людмила</td><td>Олійник</td><td>SR Подольск Юг</td><td>Крищенський</td><td>14</td></tr><tr class="highlight"><td>Людмила</td><td>Куліковська</td><td>SR Одесса Застава</td><td>Цибулько</td><td>11</td></tr><tr class="highlight"><td>Алла</td><td>Бондаренко</td><td>SR Odessa SR7</td><td>Бондаренко</td><td>10</td></tr><tr class="highlight"><td>Владислав</td><td>Неплій</td><td>SR Одесса Застава</td><td>Цибулько</td><td>9</td></tr><tr class="highlight"><td>Олена</td><td>Пиіскарьова</td><td>SR Odessa SR7</td><td>Бондаренко</td><td>7</td></tr><tr class="highlight"><td>Сергій</td><td>Кіріяк</td><td>SR Подольск Юг</td><td>Скайфол</td><td>7</td></tr><tr class="highlight"><td>Діана</td><td>Чорна</td><td>SR Подольск Юг</td><td>Паламар</td><td>6</td></tr><tr class="highlight"><td>Ірина</td><td>Солон</td><td>SR Odessa SR9</td><td>Рибачук</td><td>6</td></tr><tr class="highlight"><td>Наталія</td><td>Євтушенко</td><td>SR Odessa Sarata SR3</td><td>Міцул</td><td>6</td></tr><tr class="highlight"><td>Наталія</td><td>Романова</td><td>SR Odessa SR7</td><td>Максимова</td><td>6</td></tr><tr class="highlight"><td>Олександр</td><td>Запорощенко</td><td>SR Odessa Sarata SR3</td><td>Запорощенко</td><td>6</td></tr><tr class="highlight"><td>Лідія</td><td>Скоробогач</td><td>SR Odessa Sarata SR3</td><td>Скоробогач</td><td>5</td></tr><tr class="highlight"><td>Наталія</td><td>Муравенко</td><td>SR Подольск Юг</td><td>Алієв</td><td>5</td></tr><tr class="highlight"><td>Олена</td><td>Стрельбицька</td><td>SR Біляївка</td><td>Мензатул</td><td>5</td></tr><tr class="highlight"><td>Сергій</td><td>Касумов</td><td>SR Біляївка</td><td>Косумов</td><td>5</td></tr><tr><td>Андрій</td><td>Голобородько</td><td>SR Odessa SR9</td><td>Голобородько</td><td>4</td></tr><tr><td>Віталій</td><td>Юськів</td><td>SR Чорноморськ</td><td>Юськів</td><td>4</td></tr><tr><td>Дмитро</td><td>Гуркін</td><td>SR Кіровоград chain</td><td>Стрижаков О.М.</td><td>4</td></tr><tr><td>Єгор</td><td>Мітін</td><td>SR Подольск Юг</td><td>Магазин-Бар null</td><td>4</td></tr><tr><td>Ірина</td><td>Горбатова</td><td>SR Одесса Застава</td><td>Тітаренко</td><td>4</td></tr><tr><td>Марина</td><td>Вадатурська</td><td>SR Подольск Юг</td><td>Снурніцин</td><td>4</td></tr><tr><td>Олег</td><td>Павлов</td><td>SR Odessa Sarata SR3</td><td>Скоробогач</td><td>4</td></tr><tr><td>Поліна</td><td>Ройзман</td><td>SR Одесса Курорты</td><td>Ройзман</td><td>4</td></tr><tr><td>Альона</td><td>Панченко</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>3</td></tr><tr><td>Андрій</td><td>Панчук</td><td>SR Біляївка</td><td>Подлесовський</td><td>3</td></tr><tr><td>Вікторія</td><td>Артеменко</td><td>SR Кіровоград chain</td><td>Мобижук</td><td>3</td></tr><tr><td>Вікторія</td><td>Арциховська</td><td>SR Біляївка</td><td>Чернецька</td><td>3</td></tr><tr><td>Вікторія</td><td>Богаченко</td><td>SR Біляївка</td><td>Богаченко</td><td>3</td></tr><tr><td>Володимир</td><td>Корчинський</td><td>SR Подольск Юг</td><td>Кірієв</td><td>3</td></tr><tr><td>Володимир</td><td>Чеглатонев</td><td>SR Odessa Izmail SR2</td><td>Тукан Продукти</td><td>3</td></tr><tr><td>Ігор</td><td>Підгорний</td><td>SR Біляївка</td><td>Підгорний ПП</td><td>3</td></tr><tr><td>Ігор</td><td>Подоленко</td><td>SR Odessa Sarata SR3</td><td>Подолєнко</td><td>3</td></tr><tr><td>Катерина</td><td>Дідик</td><td>SR Подольск Юг</td><td>Паламар</td><td>3</td></tr><tr><td>Лариса</td><td>Грекова</td><td>SR Odessa Izmail SR2</td><td>Грєков</td><td>3</td></tr><tr><td>Лілія</td><td>Ліференко</td><td>SR Одеса National chain</td><td>Малслінков</td><td>3</td></tr><tr><td>Сергій</td><td>Мархевка</td><td>SR Одесса Курорты</td><td>Бойко ЧП</td><td>3</td></tr><tr><td>Сергій</td><td>Цисар</td><td>SR Подольск Юг</td><td>Цисар</td><td>3</td></tr><tr><td>Татьяна</td><td>Ковальчук</td><td>SR Подольск Юг</td><td>Калита</td><td>3</td></tr><tr><td>Тетяна</td><td>Петренко</td><td>SR Одеса National chain</td><td>Мобіжук</td><td>3</td></tr><tr><td>Юлія</td><td>Неборачко</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>3</td></tr><tr><td>Вадим</td><td>Маковійчук</td><td>SR Подольск Юг</td><td>Маковійчук</td><td>2</td></tr><tr><td>Валентина</td><td>Бутенко</td><td>SR Чорноморськ</td><td>Бутенко</td><td>2</td></tr><tr><td>Валерій</td><td>Паладуца</td><td>SR Подольск Юг</td><td>Чернопіщук</td><td>2</td></tr><tr><td>Василь</td><td>Магла</td><td>SR Odessa Sarata SR3</td><td>Магло</td><td>2</td></tr><tr><td>Віра</td><td>Ребрій</td><td>SR Odessa SR7</td><td>Максимов ЧП</td><td>2</td></tr><tr><td>Віталій</td><td>Семенюк</td><td>SR Кіровоград chain</td><td>Стрижаков О.М</td><td>2</td></tr><tr><td>Володимир</td><td>Цюрупа</td><td>SR Odessa Izmail SR2</td><td>Бондарь ЧП</td><td>2</td></tr><tr><td>Георгій</td><td>Чвальов</td><td>SR Odessa SR7</td><td>Рябчинський</td><td>2</td></tr><tr><td>Євген</td><td>Явнішкіс</td><td>SR Одесса Застава</td><td>Явнішкіс</td><td>2</td></tr><tr><td>Іван</td><td>Гаражанкін</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>2</td></tr><tr><td>Інна</td><td>Черниш</td><td>SR Кіровоград chain</td><td>Стрижаков Артем Олегович</td><td>2</td></tr><tr><td>Каріна</td><td>Іванова</td><td>SR Одесса Курорты</td><td>Кім</td><td>2</td></tr><tr><td>Людмила</td><td>Паламарчук</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>2</td></tr><tr><td>Марія</td><td>Чиоран</td><td>SR Odessa Sarata SR3</td><td>Мобіжук</td><td>2</td></tr><tr><td>Микола</td><td>Путров</td><td>SR Миколаїв chain</td><td>Мобижук</td><td>2</td></tr><tr><td>Наталія</td><td>Кравченко</td><td>SR Одесса Курорты</td><td>Дімов</td><td>2</td></tr><tr><td>Оксана</td><td>Балікова</td><td>SR Біляївка</td><td>Бубелич</td><td>2</td></tr><tr><td>Олег</td><td>Лапін</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>2</td></tr><tr><td>Олександр</td><td>Здановський</td><td>SR Миколаїв chain</td><td>НРП</td><td>2</td></tr><tr><td>Олександр</td><td>Ковальов</td><td>SR Odessa Izmail SR2</td><td>НРП</td><td>2</td></tr><tr><td>Олександр</td><td>Тетеря</td><td>SR Чорноморськ</td><td>Мобільні аксесуари</td><td>2</td></tr><tr><td>Олена</td><td>Мельничук</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>2</td></tr><tr><td>Руслана</td><td>Гуровець</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>2</td></tr><tr><td>Сергій</td><td>Діянов</td><td>SR Подольск Юг</td><td>Дiянов</td><td>2</td></tr><tr><td>Сергій</td><td>Кара</td><td>SR Одеса National chain</td><td>Маслінков</td><td>2</td></tr><tr><td>Сергій</td><td>Курус</td><td>SR Одеса National chain</td><td>Маслінков</td><td>2</td></tr><tr><td>Сергій</td><td>Селімов</td><td>SR Миколаїв chain</td><td>НРП</td><td>2</td></tr><tr><td>Тетяна</td><td>Сіряк</td><td>SR Подольск Юг</td><td>Ярошевська</td><td>2</td></tr><tr><td>Юлія</td><td>Бондаренко</td><td>SR Подольск Юг</td><td>Iванiлова</td><td>2</td></tr><tr><td>Альона</td><td>Тищенко</td><td>SR Кіровоград chain</td><td>Мобижук</td><td>1</td></tr><tr><td>Анастасія</td><td>Зогова</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>1</td></tr><tr><td>Анастасія</td><td>Репенко</td><td>SR Кіровоград chain</td><td>Алло</td><td>1</td></tr><tr><td>Андрій</td><td>Лободюк</td><td>SR Odessa SR7</td><td>Лисицкий</td><td>1</td></tr><tr><td>Андрій</td><td>Носовський</td><td>SR Одеса National chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Андрій</td><td>Остромогильський</td><td>SR Одесса Застава</td><td>Данілов</td><td>1</td></tr><tr><td>Андрій</td><td>Панченко</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>1</td></tr><tr><td>Андрій</td><td>Станчев</td><td>SR Подольск Юг</td><td>Станчева</td><td>1</td></tr><tr><td>Антон</td><td>Попов</td><td>SR Odessa Izmail SR2</td><td>ЧП Лиш</td><td>1</td></tr><tr><td>Артем</td><td>Кузнецов</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Артур</td><td>Кушнір</td><td>SR Одеса National chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Вадим</td><td>Фатеев</td><td>SR Odessa SR9</td><td>СмартШоп</td><td>1</td></tr><tr><td>Василь</td><td>Порубайло</td><td>SR Odessa SR7</td><td>Порубайло  ФОП</td><td>1</td></tr><tr><td>Василь</td><td>Стародубцев</td><td>SR Чорноморськ</td><td>Стародубцева</td><td>1</td></tr><tr><td>Вікторія</td><td>Гончарова</td><td>SR Odessa Izmail SR2</td><td>Тукан Продукти</td><td>1</td></tr><tr><td>Віта</td><td>Баєва</td><td>SR Біляївка</td><td>Баєва</td><td>1</td></tr><tr><td>Віталій</td><td>Легкодух</td><td>SR Odessa SR7</td><td>ЧП Легкодух</td><td>1</td></tr><tr><td>Вячеслав</td><td>Бущан</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Денис</td><td>Ротару</td><td>SR Одеса National chain</td><td>ДОВІРА ФІНАНС ГРУП</td><td>1</td></tr><tr><td>Дмитро</td><td>Вульпе</td><td>SR Odessa Izmail SR2</td><td>Дзюма І</td><td>1</td></tr><tr><td>Дмитро</td><td>Шевченко</td><td>SR Одесса Застава</td><td>Шевченко</td><td>1</td></tr><tr><td>Євгенія</td><td>Литвин</td><td>SR Кіровоград chain</td><td>Скайфол</td><td>1</td></tr><tr><td>Іван</td><td>Рибуляк</td><td>SR Кіровоград chain</td><td>Мобіжук</td><td>1</td></tr><tr><td>Ігор</td><td>Гавгаш</td><td>SR Кіровоград chain</td><td>Стрижаков А.О.</td><td>1</td></tr><tr><td>Ігор</td><td>Левицький</td><td>SR Біляївка</td><td>Левицкий</td><td>1</td></tr><tr><td>Ігор</td><td>Рапчинський</td><td>SR Odessa Izmail SR2</td><td>Боброва</td><td>1</td></tr><tr><td>Інна</td><td>Флоренко</td><td>SR Odessa Izmail SR2</td><td>Голобородько</td><td>1</td></tr><tr><td>Ірина</td><td>Кільдінберг</td><td>SR Кіровоград chain</td><td>Скайфол</td><td>1</td></tr><tr><td>Ірина</td><td>Лєтто</td><td>SR Подольск Юг</td><td>Сичинська</td><td>1</td></tr><tr><td>Ірина</td><td>Макодзей</td><td>SR Кіровоград chain</td><td>Скайфол</td><td>1</td></tr><tr><td>Кирил</td><td>Кушнірюк</td><td>SR Одесса Курорты</td><td>Камаль Неда</td><td>1</td></tr><tr><td>Лев</td><td>Мензатул</td><td>SR Біляївка</td><td>Мензатул</td><td>1</td></tr><tr><td>Ліза</td><td>Єрмакова</td><td>SR Чорноморськ</td><td>Костенко</td><td>1</td></tr><tr><td>Людмила</td><td>Бєлік</td><td>SR Кіровоград chain</td><td>Мобіжук</td><td>1</td></tr><tr><td>Максим</td><td>Будовський</td><td>SR Odessa Izmail SR2</td><td>Будовський ПП</td><td>1</td></tr><tr><td>Микола</td><td>Пасларь</td><td>SR Odessa Izmail SR2</td><td>Пасларь</td><td>1</td></tr><tr><td>Михайло</td><td>Носач</td><td>SR Одеса National chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Надія</td><td>Гінкул</td><td>SR Одесса Курорты</td><td>Бойко ЧП</td><td>1</td></tr><tr><td>Наталя</td><td>Олексійова</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Оксана</td><td>Іванова</td><td>SR Odessa Izmail SR2</td><td>Кулінський</td><td>1</td></tr><tr><td>Олександр</td><td>Гаврилов</td><td>SR Odessa Sarata SR3</td><td>ТОВ Интер Сим</td><td>1</td></tr><tr><td>Олександр</td><td>Гратій</td><td>SR Odessa Izmail SR2</td><td>Навігатор ЦУМ</td><td>1</td></tr><tr><td>Олександр</td><td>Дьомінов</td><td>SR Одеса National chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Олександр</td><td>Лавриненко</td><td>SR Одеса National chain</td><td>Зайцева Юлія Олексіївна</td><td>1</td></tr><tr><td>Олександр</td><td>Літвінюк</td><td>SR Odessa SR9</td><td>Літвінюк</td><td>1</td></tr><tr><td>Олександр</td><td>Мензатул</td><td>SR Біляївка</td><td>Мензатул</td><td>1</td></tr><tr><td>Олександр</td><td>Пішоха</td><td>SR Подольск Юг</td><td>Пiшоха</td><td>1</td></tr><tr><td>Олександр</td><td>Тодоров</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Олександра</td><td>Харченко</td><td>SR Чорноморськ</td><td>Харченко</td><td>1</td></tr><tr><td>Олексій</td><td>Підлубний</td><td>SR Кіровоград chain</td><td>Стрижаков О.М.</td><td>1</td></tr><tr><td>Олена</td><td>Коваленко</td><td>SR Odessa SR9</td><td>Коваленко</td><td>1</td></tr><tr><td>Олена</td><td>Манько</td><td>SR Odessa Izmail SR2</td><td>ПП Зарицька</td><td>1</td></tr><tr><td>Олена</td><td>Слободчикова</td><td>SR Odessa Sarata SR3</td><td>Слободчиков</td><td>1</td></tr><tr><td>Олена</td><td>Чаполда</td><td>SR Чорноморськ</td><td>Чаполда</td><td>1</td></tr><tr><td>Ольга</td><td>Вінницька</td><td>SR Odessa SR7</td><td>Максимова</td><td>1</td></tr><tr><td>Роман</td><td>Киниця</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Ростислав</td><td>Iванченко</td><td>SR Odessa Izmail SR2</td><td>Дзюма І.</td><td>1</td></tr><tr><td>Світлана</td><td>Нестерюк</td><td>SR Одесса Курорты</td><td>Педуре</td><td>1</td></tr><tr><td>Сергій</td><td>Крищенський</td><td>SR Подольск Юг</td><td>Крищенський</td><td>1</td></tr><tr><td>Сергій</td><td>Ткаченко</td><td>SR Кіровоград chain</td><td>СТРИЖАКОВ А.O.</td><td>1</td></tr><tr><td>Сергій</td><td>Чудінович</td><td>SR Кіровоград chain</td><td>Стрижаков О.Н.</td><td>1</td></tr><tr><td>Тарас</td><td>Петренко</td><td>SR Одесса Застава</td><td>Шевченко</td><td>1</td></tr><tr><td>Тетяна</td><td>Гергель</td><td>SR Подольск Юг</td><td>Улизько</td><td>1</td></tr><tr><td>Тетяна</td><td>Гончарова</td><td>SR Odessa SR7</td><td>Гончаров</td><td>1</td></tr><tr><td>Тетяна</td><td>Горчакова</td><td>SR Одеса National chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Тетяна</td><td>Петренко</td><td>SR Кіровоград chain</td><td>Стрижаков</td><td>1</td></tr><tr><td>Тетяна</td><td>Рибальченко</td><td>SR Одесса Курорты</td><td>Рыбак</td><td>1</td></tr><tr><td>Юлія</td><td>Берон</td><td>SR Миколаїв chain</td><td>Маслінков</td><td>1</td></tr><tr><td>Юлія</td><td>Глізнуца</td><td>SR Подольск Юг</td><td>Мобіжук</td><td>1</td></tr><tr><td>Юрій</td><td>Штихно</td><td>SR Кіровоград chain</td><td>Стрижаков О.М.</td><td>1</td></tr><tr><td></td><td></td><td></td><td></td><td>319.00</td></tr></tbody></table>
@@ -194,6 +214,87 @@ document.addEventListener('DOMContentLoaded', function () {
         // Отображаем общее количество строк
         document.getElementById('totalRowCount').textContent = 'Загальна кількість участників: ' + rows.length;
     });
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var rows = document.querySelectorAll('#peopleTable tbody tr');
+
+        // Обработчик события для кнопки "Открыть попап"
+        document.getElementById('openPopupButton').addEventListener('click', function () {
+            var territoryPopupContainer = document.getElementById('territoryPopupContainer');
+            var overlay = document.getElementById('overlay');
+            territoryPopupContainer.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Создаем объект для хранения количества строк по каждой позиции в колонке "Територія"
+            var territoryCounts = {};
+
+            // Перебираем все строки и увеличиваем счетчик для каждой уникальной позиции
+            rows.forEach(function (row) {
+                // Добавляем класс .highlight, если строка выделена зеленым
+                if (!row.classList.contains('highlighted')) {
+                    var territory = row.children[2].textContent; // Здесь 2 - индекс колонки "Територія", начиная с 0
+                    territoryCounts[territory] = (territoryCounts[territory] || 0) + 1;
+                }
+            });
+
+            // Вставляем результат в таблицу в попапе
+            var territoryCountTable = document.getElementById('territoryCountTable').getElementsByTagName('tbody')[0];
+            territoryCountTable.innerHTML = '';
+            for (var territory in territoryCounts) {
+                if (territoryCounts.hasOwnProperty(territory)) {
+                    var row = territoryCountTable.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = territory;
+                    cell2.innerHTML = territoryCounts[territory];
+                }
+            }
+
+            // Добавляем события для сортировки таблицы
+            var headers = document.querySelectorAll('#territoryCountTable th');
+            headers.forEach(function (header, index) {
+                header.addEventListener('click', function () {
+                    sortTable(index);
+                });
+            });
+        });
+    });
+
+    // Закрывает попап
+    function closeTerritoryPopup() {
+        var territoryPopupContainer = document.getElementById('territoryPopupContainer');
+        var overlay = document.getElementById('overlay');
+        territoryPopupContainer.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+
+    // Функция для сортировки таблицы по заданному столбцу
+    function sortTable(columnIndex) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("territoryCountTable");
+        switching = true;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 0; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("td")[columnIndex];
+                y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+                if (columnIndex === 1) {
+                    shouldSwitch = Number(x.innerHTML) < Number(y.innerHTML);
+                } else {
+                    shouldSwitch = x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase();
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    }
+    
     </script>
     </body>
     </html>
